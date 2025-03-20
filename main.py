@@ -1,14 +1,22 @@
 import time
 
-print("Bem vindo ao seu cronômetro preferido!!!")
+def cronometro(horas, minutos, segundos):
+    # Convertendo horas, minutos e segundos para total de segundos
+    total_segundos = horas * 3600 + minutos * 60 + segundos
 
-def cronometro(segundos):
-    for t in range(segundos, -1, -1):
-        minutos, segundos = divmod(t, 60)
-        print(f"{minutos:02d}:{segundos:02d}", end="\r")
+    # Contagem regressiva
+    for t in range(total_segundos, -1, -1):
+        horas, resto = divmod(t, 3600)
+        minutos, segundos = divmod(resto, 60)
+        print(f"{horas:02d}:{minutos:02d}:{segundos:02d}", end="\r")
         time.sleep(1)
     print("Tempo esgotado!")
 
-tempo = int(input("Digite o tempo em segundos: "))
-cronometro(tempo)
-    
+# Solicitar entrada do usuário
+print("Digite o tempo para o cronômetro (máximo 24 horas):")
+horas = int(input("Horas: "))
+minutos = int(input("Minutos: "))
+segundos = int(input("Segundos: "))
+
+# Executar o cronômetro
+cronometro(horas, minutos, segundos)
