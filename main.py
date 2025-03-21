@@ -13,7 +13,7 @@ def cronometro(horas, minutos, segundos):
     print("Tempo esgotado!")
 
 # Solicitar entrada do usuário
-print("Digite o tempo para o cronômetro (máximo 24 horas):")
+print("Digite o tempo para o cronômetro:")
 horas = int(input("Horas: "))
 minutos = int(input("Minutos: "))
 segundos = int(input("Segundos: "))
